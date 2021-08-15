@@ -1,0 +1,31 @@
+from django.urls import path
+from . import adminview, views
+
+urlpatterns = [
+    path('', views.show_demo_page),
+    path('accaunts/login', views.show_login_page),
+    path('login', views.dologin, name='dologin'),
+    path('get_user_details', views.get_user_details, name='get_user_details'),
+    path('logout_user', views.logout_user, name='logout_user'),
+    path('admin_page', adminview.admin_page, name='admin_page'),
+    path('add_staff', adminview.add_staff, name='add_staff'),
+    path('add_staff_save', adminview.add_staff_save, name='add_staff_save'),
+    path('add_course', adminview.add_course, name='add_course'),
+    path('add_course_save', adminview.add_course_save, name='add_course_save'),
+    path('add_student', adminview.add_student, name='add_student'),
+    path('add_student_save', adminview.add_student_save, name='add_student_save'),
+    path('add_subject', adminview.add_subject, name='add_subject'),
+    path('add_subject_save', adminview.add_subject_save, name='add_subject_save'),
+    path('manage_staff', adminview.manage_staff, name='manage_staff'),
+    path('manage_student', adminview.manage_student, name='manage_student'),
+    path('manage_course', adminview.manage_course, name='manage_course'),
+    path('manage_subject', adminview.manage_subject, name='manage_subject'),
+    path('edit_staff/<str:staff_id>', adminview.edit_staff, name='edit_staff'),
+    path('edit_staff_save_changes', adminview.edit_staff_changes, name='edit_staff_save_changes'),
+    path('edit_student/<str:student_id>', adminview.edit_student, name='edit_student'),
+    path('edit_student_save_changes', adminview.save_edited_student_changes, name='edit_student_save_changes'),
+    path('edit_subject/<str:subject_id>', adminview.edit_subject, name='edit_subject'),
+    path('edit_subject_save_changes', adminview.save_edited_subject_changes, name='edit_subject_save_changes'),
+    path('edit_course/<str:course_id>', adminview.edit_course, name='edit_course'),
+    path('edit_course_save_changes', adminview.save_edited_course_changes, name='edit_course_save_changes'),
+]
